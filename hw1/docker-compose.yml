@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  mongo:
+    image: mongo
+    container_name: mongo 
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: world
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./mongo_db:/data/db
+      
+  jupyter:
+    build:
+      context: ./dockerfile
+      dockerfile: dockerfile-jupyter
+    container_name: jupyter
+    restart: always
+    tty: true
+    stdin_open: true
+    depends_on:
+      - mongo
+    ports:
+      - 8888:8888
+    volumes:
+      - ./code:/home/jovyan/work
+    command: start.sh jupyter notebook --NotebookApp.token=''
