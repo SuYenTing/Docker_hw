@@ -16,8 +16,15 @@ Docker部署在虛擬機CentOS7作業系統上。
 
 可直接下載HW1資料夾，在該資料夾目錄底下輸入`docker-compose up -d`，即可部署MongoDB與Jupyter Notebook(Python)。
 
-作業內容詳細說明可參考[作業筆記](https://hackmd.io/@suyenting/ryN6GoJxO)。
+作業內容詳細說明可參考[Docker作業一筆記](https://hackmd.io/@suyenting/ryN6GoJxO)。
 
+## HW4
+
+作業四是製作一個Line機器人，用戶上傳照片，會將照片搜集回本地的專案資料夾內。
+
+可直接下載HW4資料夾，在該資料夾目錄底下輸入`docker-compose up -d`，即會部署Line機器人所需要的MySQL、Python及Ngrok三個容器，但還需要手動執行相關設定。
+
+詳細說明可參考[Docker作業四筆記](https://hackmd.io/@suyenting/SyXDmqml_)。
 
 ## 上課補充筆記
 
